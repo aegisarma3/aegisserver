@@ -22,7 +22,8 @@ forEach
   ['aegis_select_field', 'aegisserver\addons\common\functions\aegis_select_field.sqf'],
   ['aegis_write_data', 'aegisserver\addons\common\functions\aegis_write_data.sqf'],
   ['aegis_log', 'aegisserver\addons\common\functions\aegis_log.sqf'],
-  ['aegis_player_connected', 'aegisserver\addons\common\functions\aegis_player_connected.sqf']
+  ['aegis_player_connected', 'aegisserver\addons\common\functions\aegis_player_connected.sqf'],
+  ['aegis_player_handle_disconnect', 'aegisserver\addons\common\functions\aegis_player_handle_disconnect.sqf']
 ];
 
 call aegis_preinit;

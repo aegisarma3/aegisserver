@@ -8,8 +8,7 @@ if !(_MySql_connection) exitWith
 	"extDB2" callExtension "9:SHUTDOWN";
 	false
 };
-//addMissionEventHandler ["HandleDisconnect", { _this call aegis_system_network_event_onHandleDisconnect; }];
-//onPlayerConnected {[_uid, _name] call aegis_player_connected};
+addMissionEventHandler ["HandleDisconnect", { _this call aegis_player_handle_disconnect; }];
 ["aegis_id", "onPlayerConnected", {[_uid, _name] call aegis_player_connected}] call BIS_fnc_addStackedEventHandler;
 
 /*onPlayerDisconnected {[_uid, _name] call ExileServer_system_network_event_onPlayerDisconnected};
