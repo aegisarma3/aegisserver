@@ -10,3 +10,18 @@ class CfgPatches
 		ammo[] = {};
 	};
 };
+
+
+class CfgFunctions
+{
+	class aegis
+	{
+		class init
+		{
+			class serverInit {
+				file = "aegisserver\addons\common\functions\serverInit.sqf";
+				preInit = 1;
+			};
+		};
+	};
+};
