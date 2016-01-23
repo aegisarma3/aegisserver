@@ -1,4 +1,3 @@
-"Entrou no handler" call aegis_log;
 private["_isKnownAccount"];
 _uid = _this select 0;
 _name = _this select 1;

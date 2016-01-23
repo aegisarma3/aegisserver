@@ -12,8 +12,6 @@ if !(_MySql_connection) exitWith
 //onPlayerConnected {[_uid, _name] call aegis_player_connected};
 ["aegis_id", "onPlayerConnected", {[_uid, _name] call aegis_player_connected}] call BIS_fnc_addStackedEventHandler;
 
-
-"Handler de connect foi executado" call aegis_log;
 /*onPlayerDisconnected {[_uid, _name] call ExileServer_system_network_event_onPlayerDisconnected};
 if !(getRemoteSensorsDisabled) then
 {
