@@ -22,6 +22,10 @@ class CfgFunctions
 				file = "aegisserver\addons\common\functions\serverInit.sqf";
 				preInit = 1;
 			};
+			class playerInit {
+				file = "aegisserver\addons\common\functions\playerInit.sqf";
+				posInit = 1;
+			};
 		};
 	};
 };

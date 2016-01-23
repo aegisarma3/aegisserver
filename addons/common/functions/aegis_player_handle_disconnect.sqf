@@ -12,8 +12,8 @@ _mapname = format["%1",worldName];
 
 if !(_uid in ["", "__SERVER__", "__HEADLESS__"]) then
 {
-  format["[endAccountSession]:%1", _uid] call aegis_write_data;
 
+  format["endAccountSession:%1", _uid] call aegis_write_data;
   _hasPlayerPositionOnMap = format["hasPlayerPositionOnMap:%1", _mapname] call aegis_select_field;
 
   if (_hasPlayerPositionOnMap) then
@@ -29,6 +29,8 @@ if !(_uid in ["", "__SERVER__", "__HEADLESS__"]) then
 	//_unit setVariable ["AegisSessionID", nil];
 	//_unit call aegis_object_player_database_update;
 	deleteVehicle _unit;
+
+
 
 };
 false

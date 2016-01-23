@@ -20,8 +20,11 @@ forEach
   ['aegis_database_init', 'aegisserver\addons\common\functions\aegis_database_init.sqf'],
   ['aegis_handleBig', 'aegisserver\addons\common\functions\aegis_handleBig.sqf'],
   ['aegis_select_field', 'aegisserver\addons\common\functions\aegis_select_field.sqf'],
+  ['aegis_select_array', 'aegisserver\addons\common\functions\aegis_select_array.sqf'],
   ['aegis_write_data', 'aegisserver\addons\common\functions\aegis_write_data.sqf'],
   ['aegis_log', 'aegisserver\addons\common\functions\aegis_log.sqf'],
+  ['aegis_move_player', 'aegisserver\addons\common\functions\aegis_move_player.sqf'],
+  ['aegis_get_player_by_id', 'aegisserver\addons\common\functions\aegis_get_player_by_id.sqf'],
   ['aegis_player_connected', 'aegisserver\addons\common\functions\aegis_player_connected.sqf'],
   ['aegis_player_handle_disconnect', 'aegisserver\addons\common\functions\aegis_player_handle_disconnect.sqf']
 ];
