@@ -1,1 +1,0 @@
-playerPosition call aegis_move_player;

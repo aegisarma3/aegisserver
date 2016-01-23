@@ -3,7 +3,7 @@ private["_parameters","_query","_result"];
 _parameters = _this;
 _query = [0, AegisDatabaseSessionId, _parameters] joinString ":";
 _result = call compile ("extDB2" callExtension _query);
-format["Busca: %1", _result] call aegis_log;
+
 switch (_result select 0) do
 {
 	case 0:
