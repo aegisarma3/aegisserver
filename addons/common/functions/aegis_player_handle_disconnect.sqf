@@ -13,7 +13,19 @@ _mapname = format["%1",worldName];
 if !(_uid in ["", "__SERVER__", "__HEADLESS__"]) then
 {
   format["[endAccountSession]:%1", _uid] call aegis_write_data;
-  format["insertPlayerPosition:%1:%2:%3:%4:%5:%6", _uid, _mapname, _direction, _posx, _posy, _posz] call aegis_write_data;
+
+  _hasPlayerPositionOnMap = format["hasPlayerPositionOnMap:%1", _mapname] call aegis_select_field;
+
+  if (_hasPlayerPositionOnMap) then
+  {
+    format["updatePlayerPosition:%1:%2:%3:%4:%5:%6", _uid, _mapname, _direction, _posx, _posy, _posz] call aegis_write_data;
+  }
+  else
+  {
+    format["insertPlayerPosition:%1:%2:%3:%4:%5:%6", _uid, _mapname, _direction, _posx, _posy, _posz] call aegis_write_data;
+  };
+
+
 	//_unit setVariable ["AegisSessionID", nil];
 	//_unit call aegis_object_player_database_update;
 	deleteVehicle _unit;
