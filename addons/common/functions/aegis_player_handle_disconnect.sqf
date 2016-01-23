@@ -10,6 +10,17 @@ _posz = _pos select 2;
 _direction = direction _unit;
 _mapname = format["%1",worldName];
 
+// Pega o inventário do player
+_inventory = str formatText ["%1", ([_unit] call ace_common_fnc_getAllGear)];
+
+
+
+
+// Pega a condicao médica do player
+_medical_condition = _unit call aegis_get_medical_condition;
+
+
+
 if !(_uid in ["", "__SERVER__", "__HEADLESS__"]) then
 {
 
@@ -19,10 +30,14 @@ if !(_uid in ["", "__SERVER__", "__HEADLESS__"]) then
   if (_hasPlayerPositionOnMap) then
   {
     format["updatePlayerPosition:%1:%2:%3:%4:%5:%6", _uid, _mapname, _direction, _posx, _posy, _posz] call aegis_write_data;
+    "extDB2" callExtension format["0:SQL:UPDATE player SET medical_condition = '%1', inventory = '%2' WHERE account_uid = '%3' AND map_name = '%4'",_medical_condition,_inventory,_uid,_mapname];
+    //format["updatePlayer:%1:%2:%3:%4", _medical_condition, _inventory, _uid, _mapname] call aegis_write_data;
   }
   else
   {
     format["insertPlayerPosition:%1:%2:%3:%4:%5:%6", _uid, _mapname, _direction, _posx, _posy, _posz] call aegis_write_data;
+    //format["createPlayer:%1:%2:%3:%4", _uid, _mapname, _medical_condition, _inventory] call aegis_write_data;
+    "extDB2" callExtension format["0:SQL:INSERT INTO player SET medical_condition = '%1', inventory = '%2', account_uid = '%3', map_name = '%4'",_medical_condition,_inventory,_uid,_mapname];
   };
 
 	//_unit setVariable ["AegisSessionID", nil];
