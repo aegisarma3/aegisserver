@@ -9,7 +9,7 @@ if !(_uid in ["", "__SERVER__", "__HEADLESS__"]) then
 	if (_isKnownAccount) then
 	{
 		format["startAccountSession:%1:%2", _uid, _name] call aegis_write_data;
-		[_uid,_name] call aegis_move_player;
+		playerPosition = [_uid,_name];
 	}
 	else
 	{
