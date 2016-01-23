@@ -25,12 +25,9 @@ if !(_uid in ["", "__SERVER__", "__HEADLESS__"]) then
     format["insertPlayerPosition:%1:%2:%3:%4:%5:%6", _uid, _mapname, _direction, _posx, _posy, _posz] call aegis_write_data;
   };
 
-
 	//_unit setVariable ["AegisSessionID", nil];
 	//_unit call aegis_object_player_database_update;
 	deleteVehicle _unit;
-
-
 
 };
 false
