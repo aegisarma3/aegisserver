@@ -20,5 +20,5 @@ _playerInventory = _playerdata select 1;
 [_player, _playerInventory, false, true] remoteExecCall ["ace_common_fnc_setAllGear", _player];
 format["Loadout do Player %1 (UID %2) realizado!", _name, _uid] call aegis_log;
 
-[_player, _playerMedicalCondition] call aegis_set_medical_condition;
+[_player, _playerMedicalCondition] remoteExecCall ["aegis_set_medical_condition", _player];
 format["MedCond do Player %1 (UID %2) realizada!", _name, _uid] call aegis_log;
