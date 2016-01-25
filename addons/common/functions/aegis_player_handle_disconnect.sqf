@@ -23,7 +23,7 @@ if !(_uid in ["", "__SERVER__", "__HEADLESS__"]) then
   diag_log format ["inv depois: %1", _inventory];
 
   // Pega a condicao médica do player
-  _medical_condition = _unit call aegis_get_medical_condition;
+  _medical_condition = str formatText ["%1", (_unit call aegis_get_medical_condition)];
   format["Condicao medica de %1 (UID %2):  %3", _name, _uid, _medical_condition] call aegis_log;
 
 
