@@ -16,21 +16,9 @@ if !(_uid in ["", "__SERVER__", "__HEADLESS__"]) then
   // Pega o inventário do player
   _inventory = str formatText ["%1", ([_unit] call ace_common_fnc_getAllGear)];
 
-  diag_log format ["inv antes: %1", _inventory];
-
-  // Escape no inventario
-  //_inventory = ([_inventory, '"', '""'] call CBA_fnc_replace);
-  diag_log format ["inv depois: %1", _inventory];
-
   // Pega a condicao médica do player
   _medical_condition = str formatText ["%1", (_unit call aegis_get_medical_condition)];
   format["Condicao medica de %1 (UID %2):  %3", _name, _uid, _medical_condition] call aegis_log;
-
-
-
-
-
-
 
   format["endAccountSession:%1", _uid] call aegis_write_data;
   _hasPlayerPositionOnMap = format["hasPlayerPositionOnMap:%1", _mapname] call aegis_select_field;
@@ -46,8 +34,6 @@ if !(_uid in ["", "__SERVER__", "__HEADLESS__"]) then
     format["createPlayer:%1:%2:%3:%4", _uid, _mapname, _medical_condition, _inventory] call aegis_write_data;
   };
 
-	//_unit setVariable ["AegisSessionID", nil];
-	//_unit call aegis_object_player_database_update;
 	deleteVehicle _unit;
 };
 false
