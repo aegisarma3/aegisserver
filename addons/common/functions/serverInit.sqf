@@ -28,7 +28,8 @@ forEach
   ['aegis_player_connected', 'aegisserver\addons\common\functions\aegis_player_connected.sqf'],
   ['aegis_player_handle_disconnect', 'aegisserver\addons\common\functions\aegis_player_handle_disconnect.sqf'],
   ['aegis_get_medical_condition', 'aegisserver\addons\common\functions\aegis_get_medical_condition.sqf'],
-  ['aegis_set_medical_condition', 'aegisserver\addons\common\functions\aegis_set_medical_condition.sqf']
+  ['aegis_set_medical_condition', 'aegisserver\addons\common\functions\aegis_set_medical_condition.sqf'],
+  ['aegis_transaction', 'aegisserver\addons\common\functions\aegis_transaction.sqf']
 ];
 
 call aegis_preinit;
