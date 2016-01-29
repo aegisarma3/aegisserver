@@ -30,7 +30,9 @@ forEach
   ['aegis_get_medical_condition', 'aegisserver\addons\common\functions\aegis_get_medical_condition.sqf'],
   ['aegis_set_medical_condition', 'aegisserver\addons\common\functions\aegis_set_medical_condition.sqf'],
   ['aegis_transaction', 'aegisserver\addons\common\functions\aegis_transaction.sqf'],
-  ['aegis_mission_payment', 'aegisserver\addons\common\functions\aegis_mission_payment.sqf']
+  ['aegis_mission_payment', 'aegisserver\addons\common\functions\aegis_mission_payment.sqf'],
+  ['aegis_client_setup', 'aegisserver\addons\common\functions\aegis_client_setup.sqf'],
+  ['aegis_newplayer', 'aegisserver\addons\common\functions\aegis_newplayer.sqf']
 ];
 
 call aegis_preinit;

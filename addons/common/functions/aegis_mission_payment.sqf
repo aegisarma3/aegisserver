@@ -37,13 +37,6 @@ format["Lucro da empresa na missao: $%1", _companyShare] call aegis_log;
 format["Saldo da empresa (depois): $%1", _companyMoney] call aegis_log;
 
 
-
-
-format["Amount: $%1", _amount] call aegis_log;
-format["Share: $%1", _companyShare] call aegis_log;
-format["Operators: %1", _operators] call aegis_log;
-
-
 _individualOperatorShare = ceil((_amount - _companyShare) / _operators);
 format["Lucro de cada operador na missao: $%1", _individualOperatorShare] call aegis_log;
 
@@ -59,13 +52,6 @@ if (_alive_only) then {
     _balance = _balance + _individualOperatorShare;
     [_balance, _x, "deposito"] call aegis_transaction;
 
-    // Utilizar mesmo sistema para o transaction
-    playerAccountBalance = _balance;
-    owner _x publicVariableClient "playerAccountBalance";
-
-    ["Transaction", ["Você recebeu um pagamento.", format["Foram depositados $%1 em sua conta.",_individualOperatorShare]]] remoteExecCall ["BIS_fnc_showNotification", _x];
-    "cash" remoteExecCall ["playSound", _x];
-
   } forEach _allAlivePlayers;
 
 } else {
@@ -74,11 +60,6 @@ if (_alive_only) then {
     _balance = format["checkPlayerMoney:%1", getPlayerUID _x] call aegis_select_field;
     _balance = _balance + _individualOperatorShare;
     [_balance, _x, "deposito"] call aegis_transaction;
-    playerAccountBalance = _balance;
-    owner _x publicVariableClient "playerAccountBalance";
-
-    ["Transaction", ["Você recebeu um pagamento.", format["Foram depositados $%1 em sua conta.",_individualOperatorShare]]] remoteExecCall ["BIS_fnc_showNotification", _x];
-    "cash" remoteExecCall ["playSound", _x];
 
   } forEach _allHumanPlayers;
 

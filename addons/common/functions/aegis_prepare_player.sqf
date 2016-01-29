@@ -23,3 +23,6 @@ format["Loadout do Player %1 (UID %2) realizado!", _name, _uid] call aegis_log;
 
 [_player, _playerMedicalCondition] call aegis_set_medical_condition;
 format["MedCond do Player %1 (UID %2) realizada!", _name, _uid] call aegis_log;
+
+// envia o saldo
+[0, _player, "saldo"] call aegis_transaction;

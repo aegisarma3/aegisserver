@@ -24,6 +24,11 @@ if !(_uid in ["", "__SERVER__", "__HEADLESS__"]) then
 	{
 		format["Criando conta para %1 (UID %2)", _name, _uid] call aegis_log;
 		format["createAccount:%1:%2", _uid, _name] call aegis_write_data;
+		// Utilizando o spawn para iniciar um SCHEDULED ENV, senão ele ignora o while loop após 10000 iterações...
+		[_uid,_name] spawn {
+			sleep 5;
+			[_this select 0, _this select 1] call aegis_newplayer;
+		};
 	};
 };
 true
