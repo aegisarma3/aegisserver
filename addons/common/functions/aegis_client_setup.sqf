@@ -1,5 +1,12 @@
 _arsenal = allMissionObjects "B_CargoNet_01_ammo_F";
+format["Arsenal encontrados:  %1", _arsenal] call aegis_log;
 _atm = allMissionObjects "Land_Laptop_unfolded_F";
+format["ATM encontrados:  %1", _atm] call aegis_log;
+
+
+format["Qtd arsenal:  %1", count _arsenal] call aegis_log;
+format["Qtd atm:  %1", count _atm] call aegis_log;
+
 
 
 // ## Valores ################################################################################################

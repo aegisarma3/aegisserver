@@ -48,19 +48,13 @@ format["Lucro de cada operador na missao: $%1", _individualOperatorShare] call a
 if (_alive_only) then {
 
   {
-    _balance = format["checkPlayerMoney:%1", getPlayerUID _x] call aegis_select_field;
-    _balance = _balance + _individualOperatorShare;
-    [_balance, _x, "deposito"] call aegis_transaction;
-
+    [_individualOperatorShare, _x, "deposito"] call aegis_transaction;
   } forEach _allAlivePlayers;
 
 } else {
 
   {
-    _balance = format["checkPlayerMoney:%1", getPlayerUID _x] call aegis_select_field;
-    _balance = _balance + _individualOperatorShare;
-    [_balance, _x, "deposito"] call aegis_transaction;
-
+    [_individualOperatorShare, _x, "deposito"] call aegis_transaction;
   } forEach _allHumanPlayers;
 
 };
