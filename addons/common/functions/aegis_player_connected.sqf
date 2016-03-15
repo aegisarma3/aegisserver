@@ -8,6 +8,7 @@ if !(_uid in ["", "__SERVER__", "__HEADLESS__"]) then
 	format["O Jogador %1 (UID %2) conectou!", _name, _uid] call aegis_log;
 	_isKnownAccount = format["isKnownAccount:%1", _uid] call aegis_select_field;
 	format["O jogador ja existe no banco de dados? -> %1", _isKnownAccount] call aegis_log;
+
 	if (_isKnownAccount) then
 	{
 		format["Iniciando reposicionamento e loadout de %1 (UID %2)", _name, _uid] call aegis_log;
