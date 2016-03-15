@@ -30,7 +30,8 @@ forEach
   ['aegis_transaction', 'aegisserver\addons\common\functions\aegis_transaction.sqf'],
   ['aegis_mission_payment', 'aegisserver\addons\common\functions\aegis_mission_payment.sqf'],
   ['aegis_client_setup', 'aegisserver\addons\common\functions\aegis_client_setup.sqf'],
-  ['aegis_newplayer', 'aegisserver\addons\common\functions\aegis_newplayer.sqf']
+  ['aegis_newplayer', 'aegisserver\addons\common\functions\aegis_newplayer.sqf'],
+  ['aegis_reset_position', 'aegisserver\addons\common\functions\aegis_reset_position.sqf']
 ];
 
 call aegis_preinit;
