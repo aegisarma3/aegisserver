@@ -1,4 +1,4 @@
-_arsenal = allMissionObjects "Land_Laptop_unfolded_F";
+_arsenal = allMissionObjects "B_supplyCrate_F";
 format["Arsenal encontrados:  %1", _arsenal] call aegis_log;
 _atm = allMissionObjects "Land_Laptop_unfolded_F";
 format["ATM encontrados:  %1", _atm] call aegis_log;
@@ -12,12 +12,12 @@ format["Qtd atm:  %1", count _atm] call aegis_log;
 // ## Valores ################################################################################################
 
 // TODO: Colocar dinamico
-START_MONEY = 1000; 			// Dinheiro inicial para quem ainda não ganhou nada.
+START_MONEY = 25000; 			// Dinheiro inicial para quem ainda não ganhou nada.
 
 // Arsenal ///////////////////////////////////////////////////////////////////////////////////////////////////////
 
 // TODO: Colocar dinamico
-ARSENAL_COST = 1000;			// Custo de acesso ao Arsenal
+ARSENAL_COST = 10250;			// Custo de acesso ao Arsenal
 publicVariable "ARSENAL_COST";
 // #################################################################################################################
 
@@ -38,7 +38,7 @@ if (count _arsenal > 0) then {
   		[
   			_x,
   			[
-  				"<t color='#FF0000'>Acessar o Arsenal ($"+format["%1", ARSENAL_COST]+")</t>",
+  				"<t color='#FF0000'>Solicitar equipamento ($"+format["%1", ARSENAL_COST]+")</t>",
   				{
 
             _player = _this select 1;
